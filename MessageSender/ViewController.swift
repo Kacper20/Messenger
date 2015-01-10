@@ -70,7 +70,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 //TODO: Handle error
             }
             else{
-                let json = JSON(data
+                let json = JS
                 
             }
         })
