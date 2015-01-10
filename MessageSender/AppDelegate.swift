@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController?.presentViewController(loginViewController, animated: true, completion: nil)
             
         }
+        UINavigationBar.appearance().tintColor = UIColor.orangeColor()
         
         return true
     }

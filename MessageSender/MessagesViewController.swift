@@ -14,7 +14,6 @@ class MessagesViewController: UIViewController, NSFetchedResultsControllerDelega
     
     
     @IBOutlet weak var tableView: UITableView!
-    
     // The controller to set
     // If it's set to proper request, class will perform showing it.
     var fetchedResultsController: NSFetchedResultsController!
@@ -29,8 +28,6 @@ class MessagesViewController: UIViewController, NSFetchedResultsControllerDelega
         
     }
     
-    
-    
     // MARK: -foo
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return fetchedResultsController.sections!.count
@@ -44,7 +41,7 @@ class MessagesViewController: UIViewController, NSFetchedResultsControllerDelega
         
         return cell
         }
-    func configureCell(cell:UITableViewCell, forIndexPath indexPath:NSIndexPath){
+    func configureCell(cell:UITableViewCell, indexPath:NSIndexPath){
         println("configure")
     }
     
@@ -67,31 +64,27 @@ class MessagesViewController: UIViewController, NSFetchedResultsControllerDelega
         }
     }
     
+    func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type:NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+        switch type{
+        case .Delete:
+            tableView.deleteRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Automatic)
+        case .Update:
+            let cell = tableView.cellForRowAtIndexPath(indexPath!) as UITableViewCell!
+            configureCell(cell!, indexPath: indexPath!)
+        case .Move:
+            tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Automatic)
+            tableView.insertRowsAtIndexPaths([newIndexPath!],withRowAnimation: .Automatic)
+        default:
+            break
+        }
+        
+    }
+    
 }
 
 
 
-    func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
-        switch type
-        {
-            
-        case NSFetchedResultsChangeType.Insert:
-            tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-        case .Delete:
-            tableView.deleteRowsAtIndexPaths([IndexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-        case .Update:
-            let cell = tableView.cellForRowAtIndexPath(indexPath) as UITableViewCell
-            configureCell(cell, indexPath: indexPath)
-        case .Move:
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-            tableView.insertRowsAtIndexPaths([newIndexPath],withRowAnimation: .Automatic)
-        default:
-            break
-        }
-    }
-    func controllerDidChangeContent(controller: NSFetchedResultsController!) {
-        tableView.endUpdates() }
-    }
+
 
     
     

@@ -105,6 +105,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             }
             dispatch_async(dispatch_get_main_queue()){
                 self.activitySpinner.stopAnimating()
+                let messagesViewController: MessagesViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("messages_controller") as MessagesViewController
+                let navController = UINavigationController(rootViewController: messagesViewController)
+                let delegate = UIApplication.sharedApplication().delegate as AppDelegate!
+                let window = delegate.window!
+                window.rootViewController?.presentViewController(messagesViewController, animated: true, completion: nil)
             }
         })
         task.resume()

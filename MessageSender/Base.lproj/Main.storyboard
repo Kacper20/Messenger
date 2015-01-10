@@ -165,10 +165,10 @@
             </objects>
             <point key="canvasLocation" x="326" y="405"/>
         </scene>
-        <!--View Controller-->
+        <!--Messages View Controller-->
         <scene sceneID="fo6-zQ-SeU">
             <objects>
-                <viewController id="Gj2-8c-FXW" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="messages_controller" id="Gj2-8c-FXW" customClass="MessagesViewController" customModule="MessageSender" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="23U-Jr-et2"/>
                         <viewControllerLayoutGuide type="bottom" id="W6W-8e-OqM"/>
@@ -176,9 +176,18 @@
                     <view key="view" contentMode="scaleToFill" id="10l-Kq-WIi">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="XPl-dd-3YM">
+                                <rect key="frame" x="-8" y="164" width="608" height="400"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Mv0-ru-iza"/>
+                    <connections>
+                        <outlet property="tableView" destination="XPl-dd-3YM" id="ZbM-xK-vAK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="442-WH-Tuo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
