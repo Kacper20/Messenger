@@ -83,16 +83,16 @@
                                             <action selector="loginButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="r3j-4j-Zv6"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vRj-ES-H3i" userLabel="text-fields-container" customClass="TextFieldContainerView" customModule="MessageSender" customModuleProvider="target">
-                                        <rect key="frame" x="60" y="48" width="480" height="108"/>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vRj-ES-H3i" userLabel="text-fields-container" customClass="TextFieldContainerView" customModule="MessageSender" customModuleProvider="target">
+                                        <rect key="frame" x="60" y="48" width="480" height="98"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mwZ-TL-46t">
-                                                <rect key="frame" x="8" y="56" width="466" height="46"/>
+                                                <rect key="frame" x="8" y="50" width="466" height="56"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="21"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Login" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DgL-Yu-8nN">
-                                                <rect key="frame" x="8" y="3" width="292" height="58"/>
+                                                <rect key="frame" x="8" y="0.0" width="292" height="58"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="21"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -100,10 +100,10 @@
                                         <color key="backgroundColor" red="0.84705882352941175" green="0.84705882352941175" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="mwZ-TL-46t" firstAttribute="leading" secondItem="vRj-ES-H3i" secondAttribute="leading" constant="8" id="3Cb-Mm-pcg"/>
-                                            <constraint firstAttribute="bottom" secondItem="mwZ-TL-46t" secondAttribute="bottom" constant="6" id="VlH-HK-eLa"/>
+                                            <constraint firstAttribute="bottom" secondItem="mwZ-TL-46t" secondAttribute="bottom" constant="2" id="VlH-HK-eLa"/>
                                             <constraint firstAttribute="trailing" secondItem="mwZ-TL-46t" secondAttribute="trailing" constant="6" id="ahw-Cw-Yh4"/>
                                             <constraint firstAttribute="width" constant="300" id="hRr-wM-OBv"/>
-                                            <constraint firstItem="mwZ-TL-46t" firstAttribute="top" secondItem="vRj-ES-H3i" secondAttribute="top" constant="56" id="hxh-I6-Gpa"/>
+                                            <constraint firstItem="mwZ-TL-46t" firstAttribute="top" secondItem="vRj-ES-H3i" secondAttribute="top" constant="50" id="hxh-I6-Gpa"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -164,6 +164,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="326" y="405"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="fo6-zQ-SeU">
+            <objects>
+                <viewController id="Gj2-8c-FXW" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="23U-Jr-et2"/>
+                        <viewControllerLayoutGuide type="bottom" id="W6W-8e-OqM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="10l-Kq-WIi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Mv0-ru-iza"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="442-WH-Tuo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2032" y="405"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Jnk-Ix-yrq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hC3-qF-Wrx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Nmj-Lz-r1R">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Gj2-8c-FXW" kind="relationship" relationship="rootViewController" id="yp3-YY-kIi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R7v-U5-Ldx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1220" y="405"/>
         </scene>
     </scenes>
 </document>

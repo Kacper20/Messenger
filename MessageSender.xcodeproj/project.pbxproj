@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		E7ED44581A6168FE00721779 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED44571A6168FE00721779 /* AppDelegate.swift */; };
 		E7ED445B1A6168FE00721779 /* MessageSender.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7ED44591A6168FE00721779 /* MessageSender.xcdatamodeld */; };
-		E7ED445D1A6168FE00721779 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED445C1A6168FE00721779 /* ViewController.swift */; };
+		E7ED445D1A6168FE00721779 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED445C1A6168FE00721779 /* LoginViewController.swift */; };
 		E7ED44601A6168FE00721779 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7ED445E1A6168FE00721779 /* Main.storyboard */; };
 		E7ED44621A6168FE00721779 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7ED44611A6168FE00721779 /* Images.xcassets */; };
 		E7ED44651A6168FE00721779 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7ED44631A6168FE00721779 /* LaunchScreen.xib */; };
@@ -18,6 +18,7 @@
 		E7ED44B01A61951500721779 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED44AF1A61951500721779 /* APIHelper.swift */; };
 		E7ED44B21A619C0A00721779 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED44B11A619C0A00721779 /* Constants.swift */; };
 		E7ED44B41A61A85C00721779 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED44B31A61A85C00721779 /* SwiftyJSON.swift */; };
+		E7ED44B81A61B9EC00721779 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED44B71A61B9EC00721779 /* MessagesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,17 +36,18 @@
 		E7ED44561A6168FE00721779 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7ED44571A6168FE00721779 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7ED445A1A6168FE00721779 /* MessageSender.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MessageSender.xcdatamodel; sourceTree = "<group>"; };
-		E7ED445C1A6168FE00721779 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E7ED445C1A6168FE00721779 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = MessageSender/LoginViewController.swift; sourceTree = "<group>"; };
 		E7ED445F1A6168FE00721779 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E7ED44611A6168FE00721779 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E7ED44641A6168FE00721779 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		E7ED446A1A6168FE00721779 /* MessageSenderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MessageSenderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7ED446F1A6168FE00721779 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7ED44701A6168FE00721779 /* MessageSenderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageSenderTests.swift; sourceTree = "<group>"; };
-		E7ED44AB1A61883700721779 /* TextFieldContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldContainerView.swift; sourceTree = "<group>"; };
+		E7ED44AB1A61883700721779 /* TextFieldContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFieldContainerView.swift; path = MessageSender/TextFieldContainerView.swift; sourceTree = "<group>"; };
 		E7ED44AF1A61951500721779 /* APIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
 		E7ED44B11A619C0A00721779 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E7ED44B31A61A85C00721779 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		E7ED44B71A61B9EC00721779 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,16 +89,14 @@
 		E7ED44541A6168FE00721779 /* MessageSender */ = {
 			isa = PBXGroup;
 			children = (
+				E7ED44B61A61B2E100721779 /* View */,
+				E7ED44B51A61AC0D00721779 /* Controllers */,
 				E7ED44571A6168FE00721779 /* AppDelegate.swift */,
-				E7ED445C1A6168FE00721779 /* ViewController.swift */,
 				E7ED44AF1A61951500721779 /* APIHelper.swift */,
-				E7ED445E1A6168FE00721779 /* Main.storyboard */,
-				E7ED44AB1A61883700721779 /* TextFieldContainerView.swift */,
 				E7ED44611A6168FE00721779 /* Images.xcassets */,
 				E7ED44631A6168FE00721779 /* LaunchScreen.xib */,
 				E7ED44B11A619C0A00721779 /* Constants.swift */,
 				E7ED44591A6168FE00721779 /* MessageSender.xcdatamodeld */,
-				E7ED44B31A61A85C00721779 /* SwiftyJSON.swift */,
 				E7ED44551A6168FE00721779 /* Supporting Files */,
 			);
 			path = MessageSender;
@@ -105,6 +105,7 @@
 		E7ED44551A6168FE00721779 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E7ED44B31A61A85C00721779 /* SwiftyJSON.swift */,
 				E7ED44561A6168FE00721779 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -125,6 +126,26 @@
 				E7ED446F1A6168FE00721779 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E7ED44B51A61AC0D00721779 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E7ED445C1A6168FE00721779 /* LoginViewController.swift */,
+				E7ED44B71A61B9EC00721779 /* MessagesViewController.swift */,
+			);
+			name = Controllers;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		E7ED44B61A61B2E100721779 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E7ED445E1A6168FE00721779 /* Main.storyboard */,
+				E7ED44AB1A61883700721779 /* TextFieldContainerView.swift */,
+			);
+			name = View;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,12 +248,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7ED445D1A6168FE00721779 /* ViewController.swift in Sources */,
+				E7ED445D1A6168FE00721779 /* LoginViewController.swift in Sources */,
 				E7ED445B1A6168FE00721779 /* MessageSender.xcdatamodeld in Sources */,
 				E7ED44AC1A61883700721779 /* TextFieldContainerView.swift in Sources */,
 				E7ED44B01A61951500721779 /* APIHelper.swift in Sources */,
 				E7ED44581A6168FE00721779 /* AppDelegate.swift in Sources */,
 				E7ED44B41A61A85C00721779 /* SwiftyJSON.swift in Sources */,
+				E7ED44B81A61B9EC00721779 /* MessagesViewController.swift in Sources */,
 				E7ED44B21A619C0A00721779 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,6 +284,7 @@
 				E7ED445F1A6168FE00721779 /* Base */,
 			);
 			name = Main.storyboard;
+			path = MessageSender;
 			sourceTree = "<group>";
 		};
 		E7ED44631A6168FE00721779 /* LaunchScreen.xib */ = {

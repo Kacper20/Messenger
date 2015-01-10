@@ -9,6 +9,7 @@
 import Foundation
 struct APIKeys{
     static let protocolVersionKey = "protocolVersion"
+    static let protocolNowTimeKey = "nowTime"
 }
 struct APIUrls{
     static let protocolVersionUrl = "http://znfgnu.ovh:8080/info"
