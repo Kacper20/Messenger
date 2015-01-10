@@ -19,9 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         let defaults = NSUserDefaults.standardUserDefaults()
-        /* When user is not logged in - instantiate 
+        /* When user is not logged in - instantiate view controller used to logged in */
         if defaults.objectForKey(isUserLoggedIn) == nil{
-            
+            let loginViewController: LoginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("login_controller") as LoginViewController
+            self.window?.rootViewController?.presentViewController(loginViewController, animated: true, completion: nil)
             
         }
         

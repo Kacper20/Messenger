@@ -15,6 +15,9 @@
 		E7ED44651A6168FE00721779 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7ED44631A6168FE00721779 /* LaunchScreen.xib */; };
 		E7ED44711A6168FE00721779 /* MessageSenderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED44701A6168FE00721779 /* MessageSenderTests.swift */; };
 		E7ED44AC1A61883700721779 /* TextFieldContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED44AB1A61883700721779 /* TextFieldContainerView.swift */; };
+		E7ED44B01A61951500721779 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED44AF1A61951500721779 /* APIHelper.swift */; };
+		E7ED44B21A619C0A00721779 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED44B11A619C0A00721779 /* Constants.swift */; };
+		E7ED44B41A61A85C00721779 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED44B31A61A85C00721779 /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,9 @@
 		E7ED446F1A6168FE00721779 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7ED44701A6168FE00721779 /* MessageSenderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageSenderTests.swift; sourceTree = "<group>"; };
 		E7ED44AB1A61883700721779 /* TextFieldContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldContainerView.swift; sourceTree = "<group>"; };
+		E7ED44AF1A61951500721779 /* APIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
+		E7ED44B11A619C0A00721779 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E7ED44B31A61A85C00721779 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,10 +89,12 @@
 			children = (
 				E7ED44571A6168FE00721779 /* AppDelegate.swift */,
 				E7ED445C1A6168FE00721779 /* ViewController.swift */,
+				E7ED44AF1A61951500721779 /* APIHelper.swift */,
 				E7ED445E1A6168FE00721779 /* Main.storyboard */,
 				E7ED44AB1A61883700721779 /* TextFieldContainerView.swift */,
 				E7ED44611A6168FE00721779 /* Images.xcassets */,
 				E7ED44631A6168FE00721779 /* LaunchScreen.xib */,
+				E7ED44B11A619C0A00721779 /* Constants.swift */,
 				E7ED44591A6168FE00721779 /* MessageSender.xcdatamodeld */,
 				E7ED44551A6168FE00721779 /* Supporting Files */,
 			);
@@ -96,6 +104,7 @@
 		E7ED44551A6168FE00721779 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E7ED44B31A61A85C00721779 /* SwiftyJSON.swift */,
 				E7ED44561A6168FE00721779 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -221,7 +230,10 @@
 				E7ED445D1A6168FE00721779 /* ViewController.swift in Sources */,
 				E7ED445B1A6168FE00721779 /* MessageSender.xcdatamodeld in Sources */,
 				E7ED44AC1A61883700721779 /* TextFieldContainerView.swift in Sources */,
+				E7ED44B01A61951500721779 /* APIHelper.swift in Sources */,
 				E7ED44581A6168FE00721779 /* AppDelegate.swift in Sources */,
+				E7ED44B41A61A85C00721779 /* SwiftyJSON.swift in Sources */,
+				E7ED44B21A619C0A00721779 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +425,7 @@
 				E7ED44761A6168FE00721779 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E7ED44771A6168FE00721779 /* Build configuration list for PBXNativeTarget "MessageSenderTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +434,7 @@
 				E7ED44791A6168FE00721779 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

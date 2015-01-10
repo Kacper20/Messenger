@@ -8,7 +8,7 @@
         <!--Login View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="LoginViewController" customModule="MessageSender" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login_controller" id="vXZ-lx-hvc" customClass="LoginViewController" customModule="MessageSender" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -79,6 +79,9 @@
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="loginButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="r3j-4j-Zv6"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vRj-ES-H3i" userLabel="text-fields-container" customClass="TextFieldContainerView" customModule="MessageSender" customModuleProvider="target">
                                         <rect key="frame" x="60" y="48" width="480" height="108"/>
@@ -88,7 +91,7 @@
                                                 <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="21"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DgL-Yu-8nN">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Login" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DgL-Yu-8nN">
                                                 <rect key="frame" x="8" y="3" width="292" height="58"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="21"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -151,8 +154,8 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="emailTextField" destination="DgL-Yu-8nN" id="BE3-am-G6d"/>
                         <outlet property="loginButton" destination="4zW-GQ-rUk" id="IV5-1N-tVa"/>
+                        <outlet property="loginTextField" destination="DgL-Yu-8nN" id="sTF-Jh-Mbh"/>
                         <outlet property="passwordTextField" destination="mwZ-TL-46t" id="Kke-2J-gyD"/>
                         <outlet property="signUpView" destination="niK-5b-jTn" id="drl-yu-6jR"/>
                         <outlet property="textFieldsContainerView" destination="vRj-ES-H3i" id="Ccb-3H-ols"/>
