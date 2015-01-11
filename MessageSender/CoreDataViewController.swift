@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class CoreDataTableViewController: UIViewController, NSFetchedResultsControllerDelegate, UITableViewDelegate, UITableViewDataSource {
+class CoreDataViewController: UIViewController, NSFetchedResultsControllerDelegate, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     // The controller to set
@@ -17,6 +17,8 @@ class CoreDataTableViewController: UIViewController, NSFetchedResultsControllerD
     var fetchedResultsController: NSFetchedResultsController!{
         didSet{
             if fetchedResultsController != oldValue{
+                tableView.delegate = self
+                tableView.dataSource = self
                 fetchedResultsController.delegate = self
                 if fetchedResultsController != nil{
                     self.performFetch()
@@ -27,14 +29,13 @@ class CoreDataTableViewController: UIViewController, NSFetchedResultsControllerD
             }
         }
     }
-    
     override func viewDidLoad() {
-        tableView.delegate = self
-        tableView.dataSource = self
+        
     }
     func performFetch(){
         var error: NSError?
         self.fetchedResultsController.performFetch(&error)
+        self.tableView.reloadData()
     }
     // MARK: -foo
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -56,8 +57,6 @@ class CoreDataTableViewController: UIViewController, NSFetchedResultsControllerD
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         fatalError("ERROR, You should override cell for row at Index Path in subclass of Core Data View Controller!")
     }
-    
-    
     func controllerWillChangeContent(controller: NSFetchedResultsController) {
         self.tableView.beginUpdates()
     }

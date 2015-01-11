@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E7A677351A62B6200068698D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A677341A62B6200068698D /* User.swift */; };
 		E7A677371A62B6210068698D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A677361A62B6210068698D /* Message.swift */; };
+		E7CE0D601A62C141005C2307 /* RecentUserChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CE0D5F1A62C141005C2307 /* RecentUserChatsViewController.swift */; };
 		E7ED44581A6168FE00721779 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED44571A6168FE00721779 /* AppDelegate.swift */; };
 		E7ED445B1A6168FE00721779 /* MessageSender.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7ED44591A6168FE00721779 /* MessageSender.xcdatamodeld */; };
 		E7ED445D1A6168FE00721779 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED445C1A6168FE00721779 /* LoginViewController.swift */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		E7A677341A62B6200068698D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E7A677361A62B6210068698D /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		E7CE0D5F1A62C141005C2307 /* RecentUserChatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentUserChatsViewController.swift; sourceTree = "<group>"; };
 		E7ED44521A6168FE00721779 /* MessageSender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MessageSender.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7ED44561A6168FE00721779 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7ED44571A6168FE00721779 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			children = (
 				E7ED445C1A6168FE00721779 /* LoginViewController.swift */,
 				E7ED44B71A61B9EC00721779 /* CoreDataViewController.swift */,
+				E7CE0D5F1A62C141005C2307 /* RecentUserChatsViewController.swift */,
 			);
 			name = Controllers;
 			path = ..;
@@ -275,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7CE0D601A62C141005C2307 /* RecentUserChatsViewController.swift in Sources */,
 				E7ED445D1A6168FE00721779 /* LoginViewController.swift in Sources */,
 				E7ED445B1A6168FE00721779 /* MessageSender.xcdatamodeld in Sources */,
 				E7ED44AC1A61883700721779 /* TextFieldContainerView.swift in Sources */,
