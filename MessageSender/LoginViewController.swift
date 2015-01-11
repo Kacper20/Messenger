@@ -84,7 +84,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 return
             }
         }
-        activitySpinner.hidden = false
         let request = APIHelper.getProtocolVersionUrl()
         let configuration = NSURLSessionConfiguration.ephemeralSessionConfiguration()
         let session = NSURLSession(configuration: configuration)
@@ -105,15 +104,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             }
             dispatch_async(dispatch_get_main_queue()){
                 self.activitySpinner.stopAnimating()
-                let messagesViewController: MessagesViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("messages_controller") as MessagesViewController
-                let navController = UINavigationController(rootViewController: messagesViewController)
+                let messagesViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("navigation") as UINavigationController
                 let delegate = UIApplication.sharedApplication().delegate as AppDelegate!
                 let window = delegate.window!
-                window.rootViewController?.presentViewController(messagesViewController, animated: true, completion: nil)
+                window.rootViewController = messagesViewController
             }
         })
         task.resume()
     }
+    
     
     func presentLoginAlert(title:String, message:String){
         let loginAlert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
@@ -122,9 +121,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
 
     func tappedSignUpView(){
-        let tapAlert = UIAlertController(title: "Error", message: "Sorry, this is not available", preferredStyle: UIAlertControllerStyle.Alert)
-        tapAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-        self.presentViewController(tapAlert, animated: true, completion: nil)
+        self.loginButton.titleLabel?.text = "SIGNUP"
+        var newRect = self.signUpView.frame
+        UIView.animateWithDuration(4.0, animations: { () -> Void in
+            newRect.origin.y = 200
+            self.signUpView.frame = newRect
+        })
+        
     }
 
 

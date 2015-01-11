@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E7A677351A62B6200068698D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A677341A62B6200068698D /* User.swift */; };
+		E7A677371A62B6210068698D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A677361A62B6210068698D /* Message.swift */; };
 		E7ED44581A6168FE00721779 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED44571A6168FE00721779 /* AppDelegate.swift */; };
 		E7ED445B1A6168FE00721779 /* MessageSender.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7ED44591A6168FE00721779 /* MessageSender.xcdatamodeld */; };
 		E7ED445D1A6168FE00721779 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED445C1A6168FE00721779 /* LoginViewController.swift */; };
@@ -31,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E7A677341A62B6200068698D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E7A677361A62B6210068698D /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		E7ED44521A6168FE00721779 /* MessageSender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MessageSender.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7ED44561A6168FE00721779 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7ED44571A6168FE00721779 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +70,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E7A677311A62B5480068698D /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				E7ED44631A6168FE00721779 /* LaunchScreen.xib */,
+				E7ED44591A6168FE00721779 /* MessageSender.xcdatamodeld */,
+				E7A677361A62B6210068698D /* Message.swift */,
+				E7A677341A62B6200068698D /* User.swift */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		E7A677321A62B5570068698D /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Delegate;
+			sourceTree = "<group>";
+		};
+		E7A677331A62B57E0068698D /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				E7ED44AF1A61951500721779 /* APIHelper.swift */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
 		E7ED44491A6168FE00721779 = {
 			isa = PBXGroup;
 			children = (
@@ -87,13 +117,13 @@
 		E7ED44541A6168FE00721779 /* MessageSender */ = {
 			isa = PBXGroup;
 			children = (
+				E7A677331A62B57E0068698D /* Helper */,
+				E7A677321A62B5570068698D /* Delegate */,
+				E7A677311A62B5480068698D /* CoreData */,
 				E7ED44B61A61B2E100721779 /* View */,
 				E7ED44B51A61AC0D00721779 /* Controllers */,
 				E7ED44571A6168FE00721779 /* AppDelegate.swift */,
-				E7ED44AF1A61951500721779 /* APIHelper.swift */,
 				E7ED44611A6168FE00721779 /* Images.xcassets */,
-				E7ED44631A6168FE00721779 /* LaunchScreen.xib */,
-				E7ED44591A6168FE00721779 /* MessageSender.xcdatamodeld */,
 				E7ED44551A6168FE00721779 /* Supporting Files */,
 			);
 			path = MessageSender;
@@ -248,7 +278,9 @@
 				E7ED445D1A6168FE00721779 /* LoginViewController.swift in Sources */,
 				E7ED445B1A6168FE00721779 /* MessageSender.xcdatamodeld in Sources */,
 				E7ED44AC1A61883700721779 /* TextFieldContainerView.swift in Sources */,
+				E7A677371A62B6210068698D /* Message.swift in Sources */,
 				E7ED44B01A61951500721779 /* APIHelper.swift in Sources */,
+				E7A677351A62B6200068698D /* User.swift in Sources */,
 				E7ED44581A6168FE00721779 /* AppDelegate.swift in Sources */,
 				E7ED44B41A61A85C00721779 /* SwiftyJSON.swift in Sources */,
 				E7ED44B81A61B9EC00721779 /* MessagesViewController.swift in Sources */,
