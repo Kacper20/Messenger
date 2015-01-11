@@ -84,7 +84,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 return
             }
         }
-        let request = APIHelper.getProtocolVersionUrl()
+        let request = APIHelper.getProtocolVersionUrlRequest()
         let configuration = NSURLSessionConfiguration.ephemeralSessionConfiguration()
         let session = NSURLSession(configuration: configuration)
         self.activitySpinner.startAnimating()

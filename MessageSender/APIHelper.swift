@@ -17,7 +17,7 @@ struct APIUrls{
 
 class APIHelper{
     
-    class func getProtocolVersionUrl() -> NSURLRequest
+    class func getProtocolVersionUrlRequest() -> NSURLRequest
     {
         return NSURLRequest(URL: NSURL(string: APIUrls.protocolVersionUrl)!)
     }
