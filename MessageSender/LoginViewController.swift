@@ -66,8 +66,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if self.passwordTextField.isFirstResponder(){
             self.passwordTextField.resignFirstResponder()
         }
-        
-        
         //Section that check, if textField
         if passwordTextField.text.utf16Count == 0{
             presentLoginAlert("Type password", message: "Login field can't be empty")
@@ -84,33 +82,24 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 return
             }
         }
-        let request = APIHelper.getProtocolVersionUrlRequest()
-        let configuration = NSURLSessionConfiguration.ephemeralSessionConfiguration()
-        let session = NSURLSession(configuration: configuration)
+        let login = loginTextField.text
+        let password = passwordTextField.text
         self.activitySpinner.startAnimating()
-        let task = session.downloadTaskWithRequest(request, completionHandler: { (localfileUrl:NSURL!, urlResponse:NSURLResponse!, error:NSError!) -> Void in
-            if error != nil{
-                println("error")
-                //TODO: Handle error
+        APIHelper.postLoginData(login, password: password) { [weak self] (success, message) -> ()  in
+            self!.activitySpinner.stopAnimating()
+            
+            if success{
+                dispatch_async(dispatch_get_main_queue()){
+                    let messagesViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("navigation") as UINavigationController
+                    let delegate = UIApplication.sharedApplication().delegate as AppDelegate!
+                    let window = delegate.window!
+                    window.rootViewController = messagesViewController
+                }
             }
             else{
-                let json = JSON(data:NSData(contentsOfURL: localfileUrl)!)
-                if let protocolVersion = json[APIKeys.protocolVersionKey].int{
-                    println("Protocol Version: \(protocolVersion)")
-                }
-                else{
-                    println("nie udalo sie!")
-                }
+                self!.presentLoginAlert("Server error", message: "Some problems with network!")
             }
-            dispatch_async(dispatch_get_main_queue()){
-                self.activitySpinner.stopAnimating()
-                let messagesViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("navigation") as UINavigationController
-                let delegate = UIApplication.sharedApplication().delegate as AppDelegate!
-                let window = delegate.window!
-                window.rootViewController = messagesViewController
-            }
-        })
-        task.resume()
+        }
     }
     
     
