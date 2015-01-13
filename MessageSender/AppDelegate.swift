@@ -15,19 +15,51 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    let isUserLoggedIn = "user_logged_in"
+    
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         let defaults = NSUserDefaults.standardUserDefaults()
         /* When user is not logged in - instantiate view controller used to logged in */
-        if defaults.objectForKey(isUserLoggedIn) == nil{
+        if defaults.objectForKey(Constants.isUserLoggedIn) == nil{
             let loginViewController: LoginViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("login_controller") as LoginViewController
             self.window?.rootViewController?.presentViewController(loginViewController, animated: true, completion: nil)
             
         }
-        UINavigationBar.appearance().tintColor = UIColor.orangeColor()
-        
+
+        self.importJsonData()
         return true
+    }
+    
+    func importJsonData(){
+        let jsonURL = NSBundle.mainBundle().URLForResource("seed", withExtension: "json")
+        let jsonData = NSData(contentsOfURL: jsonURL!)
+        
+        var error: NSError? = nil
+        let jsonArray = NSJSONSerialization.JSONObjectWithData(jsonData!, options: nil, error: &error) as NSArray
+        let messageEntity = NSEntityDescription.entityForName("Message", inManagedObjectContext: self.managedObjectContext!)
+        
+        
+        
+        for jsonDict in jsonArray{
+            let id = jsonDict["id"] as NSNumber
+            let content = jsonDict["content"] as String
+            let send = jsonDict["send"] as NSNumber
+            let received = jsonDict["received"] as NSNumber
+            let sender = jsonDict["sender"] as String
+            let receiver = jsonDict["receiver"] as String
+            let sendDate = NSDate(timeIntervalSince1970: send.doubleValue)
+            let receivedDate = NSDate(timeIntervalSince1970: received.doubleValue)
+            let message: Message = NSEntityDescription.insertNewObjectForEntityForName("Message", inManagedObjectContext: self.managedObjectContext!) as Message
+
+            message.id = id
+            message.content = content
+            message.sendDate = sendDate
+            message.receivedDate = receivedDate
+            message.sender = User.userWithLogin("sender", inManagedObjectContext: self.managedObjectContext!)!
+            message.receiver = User.userWithLogin("receiver", inManagedObjectContext: self.managedObjectContext!)!
+        }
+        
+        
     }
 
     func applicationWillResignActive(application: UIApplication) {

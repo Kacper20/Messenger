@@ -12,7 +12,6 @@ import CoreData
 class User: NSManagedObject {
 
     @NSManaged var login: String
-    @NSManaged var id: NSNumber
     @NSManaged var sendMessages: NSSet
     @NSManaged var receivedMessages: NSSet
 

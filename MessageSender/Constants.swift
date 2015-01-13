@@ -8,4 +8,10 @@
 
 import Foundation
 
+struct Constants{
+    static let isUserLoggedIn = "user_logged_in"
+    static let isSecondLogin = "user_second_login"
+    static let usersCellIdentifier = "usersCellIdentifier"
+}
+
 

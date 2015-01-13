@@ -87,7 +87,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.activitySpinner.startAnimating()
         APIHelper.postLoginData(login, password: password) { [weak self] (success, message) -> ()  in
             self!.activitySpinner.stopAnimating()
-            
             if success{
                 dispatch_async(dispatch_get_main_queue()){
                     let messagesViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("navigation") as UINavigationController
@@ -97,7 +96,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 }
             }
             else{
-                self!.presentLoginAlert("Server error", message: "Some problems with network!")
+                self!.presentLoginAlert("Server error", message: message)
             }
         }
     }

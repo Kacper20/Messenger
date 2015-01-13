@@ -25,10 +25,18 @@ class RecentUserChatsViewController: CoreDataViewController {
     func setupFetchedResultsController(){
         let fetchRequest = NSFetchRequest(entityName: "User")
         // Fetch all users, that have 
-        fetchRequest.predicate = NSPredicate(format: "sendMessages.count > 0 OR receivedMessages.count > 0")
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "sendMessages", ascending: false)]
+        fetchRequest.predicate = nil
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true, selector: "localizedStandardCompare:")]
         
         self.fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
+    }
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.usersCellIdentifier, forIndexPath: indexPath) as UITableViewCell
+        var user = self.fetchedResultsController.objectAtIndexPath(indexPath) as User
+        cell.textLabel?.text = user.login
+        
+        return cell
+        
     }
     
 
