@@ -2,9 +2,25 @@
 	{
 		"id":3000,
 		"content":"A",
-		"send":1421102141.42358,
-		"received":1421102175.54929,
-        "sender": "Kacper",
-        "receiver": "Konrad",
-	}
+		"send":1421102141.32358,
+		"received":1421102175.34929,
+        "sender": "kacper",
+        "receiver": "konrad",
+	},
+ {
+        "id":3001,
+        "content":"B",
+        "send":1421102141.42358,
+        "received":1421102175.44929,
+        "sender": "kacper",
+        "receiver": "filip",
+ },
+ {
+ "id":3002,
+ "content":"B",
+ "send":1421102141.22358,
+ "received":1421102175.24929,
+ "sender": "kacper",
+    "receiver": "dariusz",
+    }
 ]

@@ -32,10 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func importJsonData(){
         let jsonURL = NSBundle.mainBundle().URLForResource("seed", withExtension: "json")
         let jsonData = NSData(contentsOfURL: jsonURL!)!
-        
-        var error: NSError? = nil
-        
-        
+        Message.messageWithJsonData(jsonData, intoManagedObjectContext: self.managedObjectContext!)
         
     }
 

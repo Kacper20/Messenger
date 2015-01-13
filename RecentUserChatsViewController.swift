@@ -32,9 +32,12 @@ class RecentUserChatsViewController: CoreDataViewController {
     /* Function, that creates and sets fetched results controller to proper Fetch Request 
        It's invoked, when we're setting ManagedObjectContext */
     func setupFetchedResultsController(){
+        
+        let user_login = NSUserDefaults.standardUserDefaults().objectForKey(Constants.login_key) as String
+        println("login:\(user_login)")
         let fetchRequest = NSFetchRequest(entityName: "User")
         // Fetch all users, that have 
-        fetchRequest.predicate = nil
+        fetchRequest.predicate = NSPredicate(format: "login != %@ and ((sendMessages.@count > 0) or (receivedMessages.@count > 0))", user_login)
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "login", ascending: true, selector: "localizedStandardCompare:")]
         if let cont = managedObjectContext{
             self.fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)

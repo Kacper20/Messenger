@@ -88,6 +88,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         APIHelper.postLoginData(login, password: password) { [weak self] (success, message) -> ()  in
             self!.activitySpinner.stopAnimating()
             if success{
+                NSUserDefaults.standardUserDefaults().setObject(login, forKey: Constants.login_key)
                 dispatch_async(dispatch_get_main_queue()){
                     let messagesViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("navigation") as UINavigationController
                     let delegate = UIApplication.sharedApplication().delegate as AppDelegate!

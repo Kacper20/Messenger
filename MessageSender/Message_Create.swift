@@ -11,8 +11,8 @@ import CoreData
 
 extension Message{
     class func messageWithJsonData(jsonData: NSData, intoManagedObjectContext managedObjectContext: NSManagedObjectContext) -> Message?{
-        var error: NSError?
-        let jsonArray = NSJSONSerialization.JSONObjectWithData(jsonData, options: nil, error: &error) as NSArray
+        var message: Message?
+        let jsonArray = NSJSONSerialization.JSONObjectWithData(jsonData, options: nil, error: nil) as NSArray
         let messageEntity = NSEntityDescription.entityForName("Message", inManagedObjectContext: managedObjectContext)
         for jsonDict in jsonArray{
             let id = jsonDict["id"] as NSNumber
@@ -24,17 +24,33 @@ extension Message{
             let sendDate = NSDate(timeIntervalSince1970: send.doubleValue)
             let receivedDate = NSDate(timeIntervalSince1970: received.doubleValue)
             
-            
-            
-            
-            let message: Message = NSEntityDescription.insertNewObjectForEntityForName("Message", inManagedObjectContext: managedObjectContext) as Message
-            message.id = id
-            message.content = content
-            message.sendDate = sendDate
-            message.receivedDate = receivedDate
-            message.sender = User.userWithLogin(sender, inManagedObjectContext: managedObjectContext)!
-            message.receiver = User.userWithLogin(receiver, inManagedObjectContext: managedObjectContext)!
+            let fetchRequest = NSFetchRequest(entityName: "Message")
+            fetchRequest.predicate = NSPredicate(format: "id = %@", id)
+            var error: NSError?
+            var matches = managedObjectContext.executeFetchRequest(fetchRequest, error: &error) as [Message]?
+            if let results = matches{
+                if results.count == 0{
+                    message = NSEntityDescription.insertNewObjectForEntityForName("Message", inManagedObjectContext: managedObjectContext) as? Message
+                    message!.id = id
+                    message!.content = content
+                    message!.sendDate = sendDate
+                    message!.receivedDate = receivedDate
+                    message!.sender = User.userWithLogin(sender, inManagedObjectContext: managedObjectContext)!
+                    message!.receiver = User.userWithLogin(receiver, inManagedObjectContext: managedObjectContext)!
+                }
+                else if results.count == 1{
+                    continue
+                }
+                else{
+                    println("Inconsistancy in database")
+                }
+            }
+            else{
+                println("ERROR IN DB: \(error?.localizedDescription)")
+                
+            }
+
         }
-        
+     return message
     }
 }
