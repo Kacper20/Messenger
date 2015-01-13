@@ -35,7 +35,7 @@ class TextFieldContainerView: UIView {
         self.layer.borderColor = UIColor(red: 151/255.0, green: 151/255.0, blue: 151/255.0, alpha: 1.0).CGColor
         self.layer.borderWidth = 1.0;
         self.layer.cornerRadius = 3.0;
-            }
+    }
     
     
 }

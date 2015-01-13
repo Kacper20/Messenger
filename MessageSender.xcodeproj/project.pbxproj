@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E7A677351A62B6200068698D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A677341A62B6200068698D /* User.swift */; };
-		E7A677371A62B6210068698D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A677361A62B6210068698D /* Message.swift */; };
+		E74FC6C51A649CA500C123FF /* MessageSender.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7ED44591A6168FE00721779 /* MessageSender.xcdatamodeld */; };
+		E77A04F31A64AA87002F8DBF /* Message_Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77A04F21A64AA87002F8DBF /* Message_Create.swift */; };
+		E784C04F1A649ECB00DC6602 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E784C04E1A649ECB00DC6602 /* User.swift */; };
+		E784C0511A649EED00DC6602 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E784C0501A649EED00DC6602 /* Message.swift */; };
 		E7BAE8FD1A648441009F11C4 /* seed.json in Resources */ = {isa = PBXBuildFile; fileRef = E7BAE8FC1A648441009F11C4 /* seed.json */; };
 		E7BAE8FF1A648B15009F11C4 /* User_Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BAE8FE1A648B15009F11C4 /* User_Create.swift */; };
 		E7CE0D601A62C141005C2307 /* RecentUserChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CE0D5F1A62C141005C2307 /* RecentUserChatsViewController.swift */; };
 		E7CE0D621A62D0B4005C2307 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CE0D611A62D0B4005C2307 /* Constants.swift */; };
 		E7ED44581A6168FE00721779 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED44571A6168FE00721779 /* AppDelegate.swift */; };
-		E7ED445B1A6168FE00721779 /* MessageSender.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7ED44591A6168FE00721779 /* MessageSender.xcdatamodeld */; };
 		E7ED445D1A6168FE00721779 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7ED445C1A6168FE00721779 /* LoginViewController.swift */; };
 		E7ED44601A6168FE00721779 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7ED445E1A6168FE00721779 /* Main.storyboard */; };
 		E7ED44621A6168FE00721779 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7ED44611A6168FE00721779 /* Images.xcassets */; };
@@ -37,8 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E7A677341A62B6200068698D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		E7A677361A62B6210068698D /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		E77A04F21A64AA87002F8DBF /* Message_Create.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message_Create.swift; sourceTree = "<group>"; };
+		E784C04E1A649ECB00DC6602 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = SOURCE_ROOT; };
+		E784C0501A649EED00DC6602 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = SOURCE_ROOT; };
 		E7BAE8FC1A648441009F11C4 /* seed.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = seed.json; sourceTree = "<group>"; };
 		E7BAE8FE1A648B15009F11C4 /* User_Create.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User_Create.swift; sourceTree = "<group>"; };
 		E7CE0D5F1A62C141005C2307 /* RecentUserChatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentUserChatsViewController.swift; sourceTree = "<group>"; };
@@ -83,9 +85,10 @@
 			children = (
 				E7ED44631A6168FE00721779 /* LaunchScreen.xib */,
 				E7ED44591A6168FE00721779 /* MessageSender.xcdatamodeld */,
-				E7A677361A62B6210068698D /* Message.swift */,
-				E7A677341A62B6200068698D /* User.swift */,
+				E784C0501A649EED00DC6602 /* Message.swift */,
+				E784C04E1A649ECB00DC6602 /* User.swift */,
 				E7BAE8FE1A648B15009F11C4 /* User_Create.swift */,
+				E77A04F21A64AA87002F8DBF /* Message_Create.swift */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -288,15 +291,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E77A04F31A64AA87002F8DBF /* Message_Create.swift in Sources */,
+				E74FC6C51A649CA500C123FF /* MessageSender.xcdatamodeld in Sources */,
 				E7BAE8FF1A648B15009F11C4 /* User_Create.swift in Sources */,
 				E7CE0D601A62C141005C2307 /* RecentUserChatsViewController.swift in Sources */,
+				E784C04F1A649ECB00DC6602 /* User.swift in Sources */,
+				E784C0511A649EED00DC6602 /* Message.swift in Sources */,
 				E7CE0D621A62D0B4005C2307 /* Constants.swift in Sources */,
 				E7ED445D1A6168FE00721779 /* LoginViewController.swift in Sources */,
-				E7ED445B1A6168FE00721779 /* MessageSender.xcdatamodeld in Sources */,
 				E7ED44AC1A61883700721779 /* TextFieldContainerView.swift in Sources */,
-				E7A677371A62B6210068698D /* Message.swift in Sources */,
 				E7ED44B01A61951500721779 /* APIHelper.swift in Sources */,
-				E7A677351A62B6200068698D /* User.swift in Sources */,
 				E7ED44581A6168FE00721779 /* AppDelegate.swift in Sources */,
 				E7ED44B41A61A85C00721779 /* SwiftyJSON.swift in Sources */,
 				E7ED44B81A61B9EC00721779 /* CoreDataViewController.swift in Sources */,

@@ -18,6 +18,15 @@ class RecentUserChatsViewController: CoreDataViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let delegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let context = delegate.managedObjectContext!
+        self.managedObjectContext = context
+
+
+        
+        
+        
+        
         self.navigationController?.navigationBar.barTintColor = UIColor.orangeColor()
     }
     /* Function, that creates and sets fetched results controller to proper Fetch Request 
@@ -26,9 +35,11 @@ class RecentUserChatsViewController: CoreDataViewController {
         let fetchRequest = NSFetchRequest(entityName: "User")
         // Fetch all users, that have 
         fetchRequest.predicate = nil
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true, selector: "localizedStandardCompare:")]
-        
-        self.fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "login", ascending: true, selector: "localizedStandardCompare:")]
+        if let cont = managedObjectContext{
+            self.fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext!, sectionNameKeyPath: nil, cacheName: nil)
+            println("context jest OK!")
+        }
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(Constants.usersCellIdentifier, forIndexPath: indexPath) as UITableViewCell

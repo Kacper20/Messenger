@@ -38,16 +38,18 @@ class CoreDataViewController: UIViewController, NSFetchedResultsControllerDelega
         self.tableView.reloadData()
     }
     // MARK: -foo
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return fetchedResultsController.sections!.count
-    }
+//    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+//        printf
+//        return fetchedResultsController.sections!.count
+//    }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let sectionInfo = fetchedResultsController.sections![section] as NSFetchedResultsSectionInfo
+        println("number: \(sectionInfo.numberOfObjects)")
         return sectionInfo.numberOfObjects
     }
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return self.fetchedResultsController.sections![section].name
-    }
+//    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return self.fetchedResultsController.sections?[section].name
+//    }
     func tableView(tableView: UITableView, sectionForSectionIndexTitle title: String, atIndex index: Int) -> Int {
         return self.fetchedResultsController.sectionForSectionIndexTitle(title, atIndex: index)
     }
